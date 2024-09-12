@@ -14,10 +14,11 @@ class Company(BaseModel, Base):
         __tablename__ = 'companies'
         catagory_id = Column(String(60), ForeignKey('catagories.id'), nullable=False)
         name = Column(String(128), nullable=False)
-
+        href = Column(String(1024), nullable=True)
     else:
         catagory_id = ""
         name = ""
+        href = ""
 
     def __init__(self, *args, **kwargs):
         """initializes company"""

@@ -14,9 +14,11 @@ class Catagory(BaseModel, Base):
     if models.storage_t == "db":
         __tablename__ = 'catagories'
         name = Column(String(128), nullable=False)
+        description = Column(String(1024), nullable=True)
         companies = relationship("Company", backref="catagory")
     else:
         name = ""
+        description = ""
 
     def __init__(self, *args, **kwargs):
         """initializes catagory"""

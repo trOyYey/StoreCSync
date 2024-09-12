@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>Catagories</H1>
+        <UL>
+	    {% for catagory in catagories %}
+            <LI>{{ catagory["id"] }}: <B>{{ catagory["name"] }}</B></LI>
+	    {% endfor %}
+        </UL>
+    </BODY>
+</HTML>

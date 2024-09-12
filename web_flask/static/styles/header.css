@@ -1,0 +1,24 @@
+
+header {
+	background-color: rgba(255, 255, 255, 0.192);
+	height: 70px;
+	width: 100%;
+	
+	border-bottom: 1px solid #ffffff;
+}
+
+#header_logo {
+	height: 110%;
+	width: 140px;
+
+	background-image: url("../images/icon.png");
+	background-position: center;
+    margin-top: 20px;
+	margin-left: 20px;
+}
+#header_p {
+    position: relative;
+    margin-left: 130px;
+    color: #098ad4ef;
+    font-size: 22px;
+}

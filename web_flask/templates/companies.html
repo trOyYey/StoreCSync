@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>SCS</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>Catagories</H1>
+        <UL>
+        {% for catagory in catagories|sort(attribute='name') %}
+            <LI>{{ catagory.id }}: <B>{{ catagory.name }}</B>
+	        <UL>
+	        {% for company in catagory.companies|sort(attribute='name') %}
+	            <LI>{{ company.id }}: <B>{{ company.name }}</B></LI>
+	        {% endfor %}
+	        </UL>
+	    </LI>
+        {% endfor %}
+        </UL>
+    </BODY>
+</HTML>

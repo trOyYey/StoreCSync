@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>SCS</TITLE>
+    </HEAD>
+    <BODY>
+        {% if not catagory_id %}
+            <H1>Catagories</H1>
+	    <UL>
+	        {% for catagory in catagories.values()|sort(attribute='name') %}
+		    <LI>{{ catagory.id }}: <B>{{ catagory.name }}</B></LI>
+		{% endfor %}
+	    </UL>
+	{% elif catagory_id in catagories%}
+	    {% set catagory = catagories[catagory_id] %}
+	        <H1>Catagory: {{ catagory.name }}</H1>
+		<H3>Companies</H3>
+		    <UL>
+			{% for company in catagory.companies|sort(attribute='name') %}
+                            <LI>{{ company.id }}: <B>{{ company.name }}</B></LI>
+                        {% endfor %}
+		    </UL>
+	{% else %}
+	    <H1>Not found!</H1>
+	{% endif %}
+    </BODY>
+</HTML>
